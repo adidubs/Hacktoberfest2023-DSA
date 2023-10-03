@@ -1,29 +1,21 @@
-// written by dread 
-
-
+// writen by adidubs
 #include <iostream>
-
-// Recursive function to calculate factorial
-unsigned long long factorial(int n) {
-    if (n <= 1) {
-        return 1;
-    } else {
-        return n * factorial(n - 1);
-    }
-}
+using namespace std;
 
 int main() {
-    int num;
+    int n;
+    long factorial = 1.0;
 
-    // Input a non-negative integer
-    std::cout << "Enter a non-negative integer: ";
-    std::cin >> num;
+    cout << "Enter a positive integer: ";
+    cin >> n;
 
-    if (num < 0) {
-        std::cout << "Factorial is not defined for negative numbers." << std::endl;
-    } else {
-        unsigned long long result = factorial(num);
-        std::cout << "Factorial of " << num << " is " << result << std::endl;
+    if (n < 0)
+        cout << "Error! Factorial of a negative number doesn't exist.";
+    else {
+        for(int i = 1; i <= n; ++i) {
+            factorial *= i;
+        }
+        cout << "Factorial of " << n << " = " << factorial;    
     }
 
     return 0;
